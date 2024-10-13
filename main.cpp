@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 #include "tokenizer.hpp"
+#include "operation_tree.hpp"
 
 int main() {
 	std::string expression;
@@ -17,9 +18,9 @@ int main() {
 		return EXIT_FAILURE;
 	}
 
-	for(Evaluator::Token token : tokenizer.get_tokens()) {
-		std::cout << token.value << " ";
-	}
+	Evaluator::OperationTree operation_tree;
+
+	operation_tree.encode(tokenizer);
 
 	return 0;
 }

@@ -59,7 +59,7 @@ void Evaluator::Tokenizer::tokenize(std::string source) {
 	finish_token(std::nullopt);
 }
 
-const Evaluator::Tokenizer::Tokens& Evaluator::Tokenizer::get_tokens() {
+const Evaluator::Tokenizer::Tokens& Evaluator::Tokenizer::get_tokens() const {
 	return m_Tokens;
 }
 
@@ -73,6 +73,6 @@ char* Evaluator::Tokenizer::InvalidTokenException::what() {
 	return message;
 }
 
-char Evaluator::Tokenizer::InvalidTokenException::get_invalid_token() {
+char Evaluator::Tokenizer::InvalidTokenException::get_invalid_token() const {
 	return m_InvalidToken;
 }

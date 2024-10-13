@@ -31,7 +31,7 @@ namespace Evaluator {
 		Tokenizer();
 
 		void tokenize(std::string source);
-		const Tokens& get_tokens();
+		const Tokens& get_tokens() const;
 
 		class InvalidTokenException : public std::exception {
 			char m_InvalidToken;
@@ -39,7 +39,7 @@ namespace Evaluator {
 			InvalidTokenException(char invalid_token);
 
 			char* what();
-			char get_invalid_token();
+			char get_invalid_token() const;
 		};
 	};
 }
